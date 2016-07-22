@@ -1,0 +1,20 @@
+﻿Build started 1/29/2016 3:15:02 PM.
+     1>Project "c:\Users\finchcl\documents\visual studio 2012\Projects\LiveFeedReporting\LiveFeedReporting\LiveFeedReporting.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DatabaseConnection.cpp Source.cpp
+         Source.cpp
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\databaseconnection.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\databaseconnection.h(2): error C2008: '.' : unexpected in macro definition
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\source.cpp(9): warning C4129: 'D' : unrecognized character escape sequence
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\source.cpp(9): warning C4129: 'L' : unrecognized character escape sequence
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\source.cpp(16): error C3861: 'installedDrive': identifier not found
+         DatabaseConnection.cpp
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\databaseconnection.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\databaseconnection.h(2): error C2008: '.' : unexpected in macro definition
+     1>c:\users\finchcl\documents\visual studio 2012\projects\livefeedreporting\livefeedreporting\databaseconnection.cpp(40): error C2065: 'cbData' : undeclared identifier
+         Generating Code...
+     1>Done Building Project "c:\Users\finchcl\documents\visual studio 2012\Projects\LiveFeedReporting\LiveFeedReporting\LiveFeedReporting.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.04
