@@ -47,16 +47,27 @@ int main(){
 		//TODO Add Error logging
 		return -1;
 	}// end else
+	//TODO Add retries for connecting?
 	pickDBConnection pDB;
-	connectionStatus = pDB.sqlconn();
+	connectionStatus = pDB.sqlconn(databaseName);
 
 	// check if connection successful
 	if(connectionStatus == -1){
 		// TODO add error logging
 		return -1;
 	}// end if
+
+	startOfShiftCleanup(pDB);
 }// end main
 
+int startOfShiftCleanup(pickDBConnection aDB)
+{
+	string theSQLExec("TRUNCATE TABLE ReportTool.CurrentStandings");
+	// First we need to clear the currentstandings
+	aDB.sqlexec(theSQLExec,"delete");
+	return 1;
+}// end startOfShiftCleanup
+// Helper Function to find the installed Drive
 char installedDrive() {
 	char* iPath;
 	iPath = getenv("DITPATH");
