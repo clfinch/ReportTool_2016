@@ -8,7 +8,7 @@
 #include<string>
 
 #define MYSQLSUCCESS(rc) ((rc == SQL_SUCCESS)|| (rc == SQL_SUCCESS_WITH_INFO) )
-
+using namespace std;
 class pickDBConnection {
 	RETCODE rc; //ODBC return code
 	HENV henv; //Enviornment

@@ -2,6 +2,9 @@
 #include<fstream>
 #include<stdlib.h>
 #include<string>
+#include<chrono>
+#include<thread>
+#include <time.h>
 #include "DatabaseConnection.h"
 using namespace std;
 
@@ -57,16 +60,45 @@ int main(){
 		return -1;
 	}// end if
 
-	startOfShiftCleanup(pDB);
+	startOfShift(pDB);
+
+	return startWatchdog(startShiftTime, endShiftTime, pDB);
 }// end main
 
-int startOfShiftCleanup(pickDBConnection aDB)
+int startWatchdog(string aStartShift, string aEndShift, pickDBConnection aDB)
+{
+	string lLastRun = getCurrentTime();
+	int x = 1;
+	string lSQLGetHistory("SELECT * FROM PickDirector.History");
+	// start infinite loop
+	while(x=1)
+	{
+		aDB.sqlexec(lSQLGetHistory,"update");
+		
+
+		std::this_thread::sleep_for(std::chrono::minutes(5));
+	}// end loop
+}// end startWatchdog
+
+int startOfShift(pickDBConnection aDB)
 {
 	string theSQLExec("TRUNCATE TABLE ReportTool.CurrentStandings");
 	// First we need to clear the currentstandings
 	aDB.sqlexec(theSQLExec,"delete");
 	return 1;
 }// end startOfShiftCleanup
+
+string getCurrentTime()
+{
+	time_t now = time(0);
+	struct tm tstruct;
+	char buf[80];
+	tstruct = *localtime(&now);
+
+	strftime(buf, sizeof(buf), "%X",&tstruct);
+
+	return buf;
+}// end getCurrentTime
 // Helper Function to find the installed Drive
 char installedDrive() {
 	char* iPath;
